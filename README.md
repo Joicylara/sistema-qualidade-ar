@@ -122,7 +122,7 @@ Instalações que foram feitas para rodar a aplicação.
   ```
       npm i nodemon
 
-### Modificações no package.json
+### 🔄 Modificações no package.json
 
 - Adicionar:
     ```
@@ -132,10 +132,56 @@ Instalações que foram feitas para rodar a aplicação.
    ```
    "dev": "nodemon src/server.js"
 
-### Como rodar?
+### 💻 Como rodar?
 
 - Abra o terminal
 - Verifica se esta na pasta certa
 - Coloque o que você definiu no package.json, no meu caso foi dev, então coloca no terminal dessa forma:
   ```
   npm run dev
+- Pronto, agora é só testar
+
+### 🧪 Alguns testes
+
+ Para realizar os testes foi utilizado o Insomnia, que é uma ferramenta de cliente HTTP avançada que facilita o desenvolvimento, teste e depuração de APIs. 
+ 
+<div align = "center">
+ <h3>Busca todos - searchDevice</h3>
+ <img src = "https://github.com/user-attachments/assets/f59d1260-3d46-4943-a564-361da652dfd0" width = "600px">
+
+URL usada: 
+ ```
+        http://localhost:3000/searchDevice
+```
+</div>
+
+<div align = "center">
+     <h3>Cria novo usuário - newUser</h3>
+<img src = "https://github.com/user-attachments/assets/45f1eae7-1350-4710-89b1-6ea5cb537650" width = "600px">
+Colocar os valores dos dados no formato Json, pelo Body, antes de enviar na url
+    
+URL usada: 
+```    
+    http://localhost:3000/newUser
+```
+</div>
+
+<div align = "center">
+     <h3>Modifica status somente em "Active" ou "Inactive" por id - updateStatus</h3>
+<img src = "https://github.com/user-attachments/assets/ebb2a388-5126-4a63-afc8-f7bb77a6f6c6"  width = "600px">
+
+URL usada: 
+```    
+    http://localhost:3000/updateStatus/(colocar o id desejado)
+```
+</div>
+
+<div align = "center">
+     <h3>Deleta dispositivo inativo por id - deleteStatus</h3>
+<img src = "https://github.com/user-attachments/assets/3b6f3030-4e64-4297-be68-6103ae9177cb" width = "600px">
+
+URL usada: 
+```    
+    http://localhost:3000/deleteStatus/(colocar o id desejado que tenha o status "Inactive")
+```
+</div>
