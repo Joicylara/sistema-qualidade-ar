@@ -124,17 +124,14 @@ Instalações que foram feitas para rodar a aplicação.
 - Instalar o nodemon, que reinicia automaticamente o servidor quando alterações do código são detectadas
   ```
       npm i nodemon
-
 ### 🔄 Modificações no package.json
 
 - Adicionar:
     ```
   "type": "module"
-
 - Adicionar atalho para rodar (opcional): o nome você escolhe, normalmente é usado start ou dev
    ```
    "dev": "nodemon src/server.js"
-
 ### 💻 Como rodar?
 
 - Abra o terminal
