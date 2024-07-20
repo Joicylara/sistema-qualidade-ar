@@ -4,7 +4,7 @@
 ## 📝 Sobre
 
 Este projeto consiste em uma API desenvolvida no miniprojeto do 
-Programa Programadores do Amanhã, no módulo 4 onde é ensinado sobre API's REST. A escolha do tema foi motivada pela experiência prática prévia em um projeto universitário,
+Programa Programadores do Amanhã, no módulo 4, onde é ensinado sobre API's REST. A escolha do tema foi motivada pela experiência prática prévia em um projeto universitário,
 onde foi desenvolvido um dispositivo de monitoramento da qualidade do ar com microcontroladores Arduino e sensores para coletar dados ambientais.
 
 Essa API é uma versão inicial simples que pode ser aprimorada em trabalhos futuros. O objetivo principal é fornecer, no momento, 
@@ -31,9 +31,11 @@ Embora, nesta versão inicial, utilizando dados simulados, ela serve para:
 ### 📜 Algumas informações importantes para melhor entendimento
 
 - O que é API?
+  
     API é Interface de Programação de Aplicações. Utilizando a analogia do garçom, API leva pedidos de um aplicativo a um serviço e traz as respostas de volta. Ela facilita a comunicação entre diferentes sistemas, permitindo que eles troquem informações sem precisar saber exatamente como funcionam por dentro.
 
 - O que é API's REST?
+  
     APIs REST (Representational State Transfer) são um tipo específico de API que segue um conjunto de princípios e regras para a troca de informações entre sistemas.
 
 - Métodos HTTP
@@ -48,7 +50,8 @@ Embora, nesta versão inicial, utilizando dados simulados, ela serve para:
     - 2xx - Sucesso
     - 3xx - Redirecionamento
     - 4xx - Erro do Cliente
-    - 5xx - Erro do Servidor:
+    - 5xx - Erro do Servidor
+      
 Irei explicar sobre o 2xx, que foi utilizado na aplicação.
 
 - Status 2xx
@@ -158,6 +161,7 @@ URL usada:
 <div align = "center">
      <h3>Cria novo usuário - newUser</h3>
 <img src = "https://github.com/user-attachments/assets/45f1eae7-1350-4710-89b1-6ea5cb537650" width = "600px">
+    
 Colocar os valores dos dados no formato Json, pelo Body, antes de enviar na url
     
 URL usada: 
