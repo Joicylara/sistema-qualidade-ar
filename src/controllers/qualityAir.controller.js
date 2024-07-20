@@ -1,74 +1,8 @@
 import { QualityAir } from "../models/QualityAir.model.js";
+import { listDeviceQualityAir } from "../data/listDeviceQualityAir.js";
 
-let listDeviceQualityAir = [
-    {
-        "idUser": "a1b2c3d4-e5f6-7890-ab12-cdef34567890",
-        "temperature": 27.4,
-        "humidity": 60,
-        "iQA": "Moderate",
-        "status": "Active",
-        "sensors": {
-            "PM2_5": 18,
-            "PM10": 30,
-            "CO": 0.4,
-            "NO2": 18,
-            "O3": 0.03,
-            "SO2": 0.02,
-            "smoke": 10
-        }
-    },
-    {
-        "idUser": "b2c3d4e5-f678-90ab-12cd-ef34567890ab",
-        "temperature": 24.8,
-        "humidity": 55,
-        "iQA": "Good",
-        "status": "Active",
-        "sensors": {
-            "PM2_5": 12,
-            "PM10": 25,
-            "CO": 0.2,
-            "NO2": 12,
-            "O3": 0.02,
-            "SO2": 0.01,
-            "smoke": 5
-        }
-    },
-    {
-        "idUser": "c3d4e5f6-7890-ab12-cdef-34567890ab12",
-        "temperature": 30.2,
-        "humidity": 70,
-        "iQA": "Poor",
-        "status": "Inactive",
-        "sensors": {
-            "PM2_5": 22,
-            "PM10": 35,
-            "CO": 0.6,
-            "NO2": 20,
-            "O3": 0.04,
-            "SO2": 0.03,
-            "smoke": 15
-        }
-    },
-    {
-        "idUser": "d4e5f678-90ab-12cd-ef34-567890ab12cd",
-        "temperature": 22.1,
-        "humidity": 50,
-        "iQA": "Very Poor",
-        "status": "Active",
-        "sensors": {
-            "PM2_5": 25,
-            "PM10": 40,
-            "CO": 0.8,
-            "NO2": 25,
-            "O3": 0.05,
-            "SO2": 0.04,
-            "smoke": 20
-        }
-    }
-];
-
-export const createUser = (temperature, humidity, iQA, status, sensors) => {
-    let user = new QualityAir(temperature, humidity, iQA, status, sensors);
+export const createUser = (temperature, humidity, iQA, status, location, sensors) => {
+    let user = new QualityAir(temperature, humidity, iQA, status, location, sensors);
     listDeviceQualityAir.push(user);
     return user;
 }
@@ -95,12 +29,23 @@ export const searchSensors = (sensorSpecific) =>{
     if(sensorsExist.length > 0){
         return listDeviceQualityAir.filter(data => sensorSpecific && data.sensors).map(specificSensor => ({
             idUser: specificSensor.idUser,
-            valueSensor: specificSensor.sensors[sensorSpecific]
+            valueSensor: specificSensor.sensors[sensorSpecific],
+            location: specificSensor.location
         }));
     }else{
         return "Esse sensor não existe";
     }       
 }
+
+export const searchState = (stateSpecific) => {
+    const devicesInState = listDeviceQualityAir.filter(({location}) => location.state === stateSpecific);
+    
+    if (devicesInState.length > 0) {
+        return devicesInState;
+    } else {
+        return "Não temos dispositivo nesse estado ou a nomeclatura para busca esta incorreta, tente tudo em caps lock";
+    }
+};
 
 export const updateStatus = (userId, status) =>{
     const idExist = listDeviceQualityAir.find(id => id.idUser === userId);

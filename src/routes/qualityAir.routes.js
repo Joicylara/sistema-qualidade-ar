@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { createUser, deleteUserInactive, searchAll, searchId, searchSensors, searcQualityAir, updateStatus } from "../controllers/qualityAir.controller.js";
+import { createUser, deleteUserInactive, searchAll, searchId, searchSensors, searchState, searcQualityAir, updateStatus } from "../controllers/qualityAir.controller.js";
 
 const deviceAirRouter = Router();
 
 
 deviceAirRouter.post("/newUser", (req, res) =>{
-    const {temperature, humidity, iQA, status, sensors } = req.body;
-    const newUser = createUser(temperature, humidity, iQA, status, sensors);
+    const {temperature, humidity, iQA, status, location, sensors } = req.body;
+    const newUser = createUser(temperature, humidity, iQA, status, location, sensors);
     res.status(201).json({ newUser });
 });
 
@@ -30,6 +30,12 @@ deviceAirRouter.get("/searchSensorSpecific/:sensors", (req, res) =>{
     const { sensors } = req.params;
     const sensorSpecific = searchSensors(sensors);
     res.status(200).json({sensorSpecific});
+});
+
+deviceAirRouter.get("/searchState/:state", (req, res) =>{
+    const { state } = req.params;
+    const stateSpecific = searchState(state);
+    res.status(200).json({stateSpecific});
 });
 
 deviceAirRouter.patch("/updateStatus/:id", (req, res) =>{
