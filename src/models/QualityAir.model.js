@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export class QualityAir{
-    constructor(idUsers,temperature, humidity, iQA, status, sensors){
-        this.idUsers = idUsers;
+    constructor(temperature, humidity, iQA, status, sensors){
+        this.idUser = uuidv4();
         this.temperature = temperature;
         this.humidity = humidity;
         this.iQA = iQA;
