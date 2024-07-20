@@ -105,6 +105,37 @@ Irei explicar sobre o 2xx, que foi utilizado na aplicação.
 <p>Deleta somente os dispositivos do id correspondente que tenha o status "Inactive"</p>
 </div>
 
-## Instalações
+## 📥 Instalações
 
+Instalações que foram feitas para rodar a aplicação.
 
+- Inicializar um projeto Node.js
+  ```
+     npm init -y
+- Instalar o framework Express
+  ```
+      npm i express
+- Instalar um pacote específico para gerar UUIDs (Universally Unique Identifiers) versão 4
+  ```
+      npm i uuidv4
+- Instalar o nodemon, que reinicia automaticamente o servidor quando alterações do código são detectadas
+  ```
+      npm i nodemon
+
+### Modificações no package.json
+
+- Adicionar:
+    ```
+  "type": "module"
+
+- Adicionar atalho para rodar (opcional): o nome você escolhe, normalmente é usado start ou dev
+   ```
+   "dev": "nodemon src/server.js"
+
+### Como rodar?
+
+- Abra o terminal
+- Verifica se esta na pasta certa
+- Coloque o que você definiu no package.json, no meu caso foi dev, então coloca no terminal dessa forma:
+  ```
+  npm run dev
