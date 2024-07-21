@@ -157,7 +157,7 @@ URL usada:
 
 <div align = "center">
      <h3>Cria novo usuário - newUser</h3>
-<img src = "https://github.com/user-attachments/assets/45f1eae7-1350-4710-89b1-6ea5cb537650" width = "600px">
+<img src = "https://github.com/user-attachments/assets/11b08cf2-231f-4ddd-bc55-50d442b46474" width = "600px">
     
 Colocar os valores dos dados no formato Json, pelo Body, antes de enviar na url
     
